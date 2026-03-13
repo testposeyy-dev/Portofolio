@@ -286,7 +286,6 @@ const App = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-5">
-            {/* ICI : Le lien de téléchargement utilise bien la variable cvPDF importée en haut */}
             <a 
               href="/cv.pdf"
               download="CV_Theo_Chatelier.pdf"
