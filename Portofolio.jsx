@@ -32,6 +32,9 @@ import {
   Share2
 } from 'lucide-react';
 
+// Importation de ton fichier CV localisé au même endroit que ce composant
+import cvPDF from './cv.pdf';
+
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('all');
@@ -84,7 +87,7 @@ const App = () => {
       desc: "Modernisation infrastructurelle globale : ToIP Ascom, WiFi Aruba (Audit & Heatmaps) et MDM SOTI pour terminaux Zebra.",
       tags: ["Aruba", "SOTI MDM", "Ascom", "WiFi Audit"],
       icon: <Network className="w-6 h-6 text-emerald-400" />,
-      docLink: "/docs/projet_convergence.pdf" // Chemin vers le fichier dans le dossier public
+      docLink: "/docs/projet_convergence.pdf" 
     },
     {
       title: "Projet SFTP Leroy",
@@ -190,19 +193,19 @@ const App = () => {
       title: "Tableau de Synthèse (E4)",
       desc: "Récapitulatif officiel des compétences SISR validées durant le cursus BTS SIO.",
       icon: <FileText className="w-8 h-8 text-blue-500" />,
-      link: "/docs/tableau_synthese_E4.pdf" // Chemin mis à jour
+      link: "/docs/tableau_synthese_E4.pdf" 
     },
     {
       title: "SecNumacadémie (ANSSI)",
       desc: "Certification de cybersécurité obtenue avec 90% de réussite.",
       icon: <ShieldCheck className="w-8 h-8 text-red-500" />,
-      link: "/docs/certif_secnumacademie.pdf" // Chemin mis à jour
+      link: "/docs/certif_secnumacademie.pdf" 
     },
     {
       title: "Certification PIX",
       desc: "Attestation des compétences numériques (Maîtrise des outils & sécurité).",
       icon: <Award className="w-8 h-8 text-emerald-500" />,
-      link: "/docs/certif_pix.pdf" // Chemin mis à jour
+      link: "/docs/certif_pix.pdf" 
     }
   ];
 
@@ -285,11 +288,10 @@ const App = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-5">
-            {/* ICI : Le bouton a été transformé en lien téléchargeable / consultable */}
+            {/* ICI : Le lien de téléchargement utilise bien la variable cvPDF importée en haut */}
             <a 
-              href="/cv.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href={cvPDF} 
+              download="CV_Theo_Chatelier.pdf"
               className="group px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-2xl transition-all shadow-2xl shadow-blue-600/40 flex items-center gap-3 uppercase text-xs tracking-widest inline-flex"
             >
               <FileDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" /> Télécharger mon CV
@@ -450,15 +452,13 @@ const App = () => {
                     ))}
                   </div>
 
-                  {/* ICI : Ajout de target="_blank" pour ouvrir le document dans un nouvel onglet */}
                   <a 
                     href={proj.docLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    download
                     className="w-full inline-flex items-center justify-center gap-3 py-4 bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all border border-blue-600/20 group/btn"
                   >
                     <FileDown className="w-4 h-4 group-hover/btn:animate-bounce" />
-                    Consulter le document
+                    Télécharger le document
                   </a>
                 </div>
               </div>
@@ -485,14 +485,12 @@ const App = () => {
                 <h3 className="text-2xl font-black text-white mb-4 tracking-tight text-left">{doc.title}</h3>
                 <p className="text-slate-500 mb-10 text-base leading-relaxed font-medium text-left flex-grow">{doc.desc}</p>
                 
-                {/* ICI : Le bouton transformé en lien téléchargeable/consultable */}
                 <a 
                   href={doc.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  download
                   className="inline-flex items-center gap-3 text-[10px] font-black text-blue-400 hover:text-blue-300 uppercase tracking-[0.25em]"
                 >
-                  <Download className="w-5 h-5" /> Document Officiel
+                  <Download className="w-5 h-5" /> Télécharger
                 </a>
               </div>
             ))}
