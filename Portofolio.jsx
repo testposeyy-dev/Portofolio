@@ -8,7 +8,6 @@ import {
   FileText, 
   ChevronRight, 
   ExternalLink, 
-  Cpu, 
   Globe,
   Menu,
   X,
@@ -20,11 +19,9 @@ import {
   Terminal,
   Settings,
   Layers,
-  Activity,
   Package,
   FileDown,
   Rss,
-  Search,
   BookOpen,
   Bell,
   Eye,
@@ -87,7 +84,7 @@ const App = () => {
       desc: "Modernisation infrastructurelle globale : ToIP Ascom, WiFi Aruba (Audit & Heatmaps) et MDM SOTI pour terminaux Zebra.",
       tags: ["Aruba", "SOTI MDM", "Ascom", "WiFi Audit"],
       icon: <Network className="w-6 h-6 text-emerald-400" />,
-      docLink: "#"
+      docLink: "/docs/projet_convergence.pdf" // Chemin vers le fichier dans le dossier public
     },
     {
       title: "Projet SFTP Leroy",
@@ -95,7 +92,7 @@ const App = () => {
       desc: "Configuration d'un client SFTP sur Windows Server. Ouverture des flux réseau spécifiques et développement de scripts d'automatisation.",
       tags: ["Windows Server", "SFTP", "Scripting", "Réseau"],
       icon: <Share2 className="w-6 h-6 text-orange-400" />,
-      docLink: "#"
+      docLink: "/docs/projet_sftp.pdf"
     },
     {
       title: "Configuration Alarme PTI",
@@ -103,7 +100,7 @@ const App = () => {
       desc: "Installation et paramétrage d'un système de Protection du Travailleur Isolé (PTI) intégré à l'infrastructure réseau.",
       tags: ["Sécurité", "IoT", "PTI", "Alarme"],
       icon: <Smartphone className="w-6 h-6 text-red-400" />,
-      docLink: "#"
+      docLink: "/docs/projet_alarme_pti.pdf"
     },
     {
       title: "Mise en place Serveur GLPI",
@@ -111,7 +108,7 @@ const App = () => {
       desc: "Déploiement et configuration complète de la solution GLPI pour la gestion du parc informatique et le suivi du helpdesk.",
       tags: ["GLPI", "ITSM", "Inventaire", "Ticketing"],
       icon: <Monitor className="w-6 h-6 text-blue-400" />,
-      docLink: "#"
+      docLink: "/docs/projet_glpi.pdf"
     },
     {
       title: "Mise en place Serveur Nextcloud",
@@ -119,7 +116,7 @@ const App = () => {
       desc: "Installation d'une solution cloud privée collaborative pour le stockage et le partage de fichiers sécurisé.",
       tags: ["Nextcloud", "Cloud Privé", "Storage", "Linux"],
       icon: <Database className="w-6 h-6 text-emerald-400" />,
-      docLink: "#"
+      docLink: "/docs/projet_nextcloud.pdf"
     },
     {
       title: "Mise en place Serveur Owncloud",
@@ -127,7 +124,7 @@ const App = () => {
       desc: "Configuration d'un serveur Owncloud pour la gestion de fichiers en entreprise avec mise en place de politiques de quotas.",
       tags: ["Owncloud", "Collaboration", "Linux", "Apache"],
       icon: <Globe className="w-6 h-6 text-indigo-400" />,
-      docLink: "#"
+      docLink: "/docs/projet_owncloud.pdf"
     },
     {
       title: "Création site Web",
@@ -135,7 +132,7 @@ const App = () => {
       desc: "Conception et développement de ce portfolio professionnel présentant mes compétences et expériences techniques.",
       tags: ["React", "Tailwind CSS", "UI/UX", "Portfolio"],
       icon: <Globe className="w-6 h-6 text-purple-400" />,
-      docLink: "#"
+      docLink: "/docs/projet_portfolio.pdf"
     },
     {
       title: "Veille Technologique",
@@ -143,7 +140,7 @@ const App = () => {
       desc: "Organisation et mise en œuvre d'une veille active sur les innovations technologiques et la cybersécurité.",
       tags: ["Veille", "RSS", "Cybersécurité", "Innovation"],
       icon: <BookOpen className="w-6 h-6 text-yellow-400" />,
-      docLink: "#"
+      docLink: "/docs/veille_technologique.pdf"
     },
     {
       title: "Redondance Active Directory",
@@ -151,7 +148,7 @@ const App = () => {
       desc: "Architecture haute disponibilité : Réplication de contrôleurs de domaine (DC), gestion FSMO et DNS redondé.",
       tags: ["Windows Server", "ADDS", "FSMO", "DNS"],
       icon: <ShieldCheck className="w-6 h-6 text-blue-400" />,
-      docLink: "#"
+      docLink: "/docs/projet_ad.pdf"
     },
     {
       title: "Déploiement Application via GPO",
@@ -159,7 +156,7 @@ const App = () => {
       desc: "Automatisation du déploiement logiciel : Création de paquets MSI et application de stratégies de groupe (GPO).",
       tags: ["GPO", "MSI", "Automation", "Deployment"],
       icon: <Package className="w-6 h-6 text-purple-400" />,
-      docLink: "#"
+      docLink: "/docs/projet_gpo.pdf"
     }
   ];
 
@@ -193,19 +190,19 @@ const App = () => {
       title: "Tableau de Synthèse (E4)",
       desc: "Récapitulatif officiel des compétences SISR validées durant le cursus BTS SIO.",
       icon: <FileText className="w-8 h-8 text-blue-500" />,
-      link: "#"
+      link: "/docs/tableau_synthese_E4.pdf" // Chemin mis à jour
     },
     {
       title: "SecNumacadémie (ANSSI)",
       desc: "Certification de cybersécurité obtenue avec 90% de réussite.",
       icon: <ShieldCheck className="w-8 h-8 text-red-500" />,
-      link: "#"
+      link: "/docs/certif_secnumacademie.pdf" // Chemin mis à jour
     },
     {
       title: "Certification PIX",
       desc: "Attestation des compétences numériques (Maîtrise des outils & sécurité).",
       icon: <Award className="w-8 h-8 text-emerald-500" />,
-      link: "#"
+      link: "/docs/certif_pix.pdf" // Chemin mis à jour
     }
   ];
 
@@ -288,9 +285,15 @@ const App = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-5">
-            <button className="group px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-2xl transition-all shadow-2xl shadow-blue-600/40 flex items-center gap-3 uppercase text-xs tracking-widest">
+            {/* ICI : Le bouton a été transformé en lien téléchargeable / consultable */}
+            <a 
+              href="/cv.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-2xl transition-all shadow-2xl shadow-blue-600/40 flex items-center gap-3 uppercase text-xs tracking-widest inline-flex"
+            >
               <FileDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" /> Télécharger mon CV
-            </button>
+            </a>
             <a href="#contact" className="px-10 py-5 bg-slate-800/50 hover:bg-slate-800 text-white font-black rounded-2xl transition-all flex items-center gap-3 border border-slate-700 uppercase text-xs tracking-widest backdrop-blur-sm">
               Me contacter <ChevronRight className="w-5 h-5 text-blue-400" />
             </a>
@@ -447,12 +450,15 @@ const App = () => {
                     ))}
                   </div>
 
+                  {/* ICI : Ajout de target="_blank" pour ouvrir le document dans un nouvel onglet */}
                   <a 
                     href={proj.docLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-3 py-4 bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all border border-blue-600/20 group/btn"
                   >
                     <FileDown className="w-4 h-4 group-hover/btn:animate-bounce" />
-                    Télécharger .docx
+                    Consulter le document
                   </a>
                 </div>
               </div>
@@ -472,15 +478,22 @@ const App = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {documents.map((doc, idx) => (
-              <div key={idx} className="p-10 bg-slate-950 border border-slate-800 rounded-[2.5rem] hover:border-blue-500 transition-all group shadow-2xl relative">
+              <div key={idx} className="p-10 bg-slate-950 border border-slate-800 rounded-[2.5rem] hover:border-blue-500 transition-all group shadow-2xl relative flex flex-col items-start">
                 <div className="p-5 bg-slate-900 rounded-3xl w-fit mb-8 group-hover:scale-110 transition-transform">
                   {doc.icon}
                 </div>
                 <h3 className="text-2xl font-black text-white mb-4 tracking-tight text-left">{doc.title}</h3>
-                <p className="text-slate-500 mb-10 text-base leading-relaxed font-medium text-left">{doc.desc}</p>
-                <button className="inline-flex items-center gap-3 text-[10px] font-black text-blue-400 hover:text-blue-300 uppercase tracking-[0.25em]">
+                <p className="text-slate-500 mb-10 text-base leading-relaxed font-medium text-left flex-grow">{doc.desc}</p>
+                
+                {/* ICI : Le bouton transformé en lien téléchargeable/consultable */}
+                <a 
+                  href={doc.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 text-[10px] font-black text-blue-400 hover:text-blue-300 uppercase tracking-[0.25em]"
+                >
                   <Download className="w-5 h-5" /> Document Officiel
-                </button>
+                </a>
               </div>
             ))}
           </div>
