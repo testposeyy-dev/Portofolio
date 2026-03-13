@@ -287,7 +287,7 @@ const App = () => {
           
           <div className="flex flex-wrap justify-center gap-5">
             <a 
-              href="/cv.pdf"
+              href="/CV_CHATELIER_Theo.pdf"
               download="CV_Theo_Chatelier.pdf"
               className="group px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-2xl transition-all shadow-2xl shadow-blue-600/40 flex items-center gap-3 uppercase text-xs tracking-widest inline-flex"
             >
