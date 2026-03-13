@@ -32,8 +32,6 @@ import {
   Share2
 } from 'lucide-react';
 
-// Importation de ton fichier CV localisé au même endroit que ce composant
-import cvPDF from './cv.pdf';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -290,7 +288,7 @@ const App = () => {
           <div className="flex flex-wrap justify-center gap-5">
             {/* ICI : Le lien de téléchargement utilise bien la variable cvPDF importée en haut */}
             <a 
-              href={cvPDF} 
+              href="/cv.pdf"
               download="CV_Theo_Chatelier.pdf"
               className="group px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-2xl transition-all shadow-2xl shadow-blue-600/40 flex items-center gap-3 uppercase text-xs tracking-widest inline-flex"
             >
