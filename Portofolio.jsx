@@ -224,7 +224,7 @@ const App = () => {
       title: "SecNumacadémie (ANSSI)",
       desc: "Certification de cybersécurité obtenue avec 90% de réussite.",
       icon: <ShieldCheck className="w-8 h-8 text-red-500" />,
-      link: "/docs/certif_secnumacademie.pdf" 
+      link: "Anssi.pdf" 
     },
     {
       title: "Certification PIX",
