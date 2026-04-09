@@ -659,7 +659,7 @@ const App = () => {
                 <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 shrink-0"><Mail className="w-6 h-6 text-blue-500" /></div>
                 <div className="flex flex-col min-w-0">
                   <span className="text-[10px] uppercase font-black tracking-widest text-slate-600">Email</span>
-                  <span className="text-white font-bold text-sm truncate">theo.chatelier@outlook.fr</span>
+                  <span className="text-white font-bold text-sm truncate">tchatelier13@gmail.com</span>
                 </div>
               </div>
               <div className="flex items-center gap-6 text-slate-400 font-medium">
