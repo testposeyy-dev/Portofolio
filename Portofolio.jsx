@@ -666,7 +666,7 @@ const App = () => {
                 <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 shrink-0"><Globe className="w-6 h-6 text-emerald-500" /></div>
                 <div className="flex flex-col">
                   <span className="text-[10px] uppercase font-black tracking-widest text-slate-600">Localisation</span>
-                  <span className="text-white font-bold text-sm">Avignon, France</span>
+                  <span className="text-white font-bold text-sm">Tarascon, France</span>
                 </div>
               </div>
             </div>
