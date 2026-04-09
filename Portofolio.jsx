@@ -348,7 +348,7 @@ const App = () => {
                 Diplômé d'un <span className="text-white underline decoration-blue-500 underline-offset-8">Bac Pro RISC (Mention Bien)</span> en 2024, je forge mon expertise technique à travers un BTS SIO au CCI Vaucluse.
               </p>
               <p className="text-slate-400 text-lg leading-relaxed">
-                Curieux et rigoureux, j'ai eu l'opportunité de travailler sur des projets d'envergure comme le projet <span className="text-white font-bold italic">Convergence</span> chez Agro Mousquetaires, alliant audit WiFi et déploiement MDM.
+                Curieux et rigoureux, j'ai eu l'opportunité de travailler sur des projets d'envergure comme le projet <span className="text-white font-bold italic">Convergence</span> chez Agro Mousquetaires, alliant audit WiFi, déploiement MDM et téléphonie IP.
               </p>
             </div>
             <div className="pt-6">
