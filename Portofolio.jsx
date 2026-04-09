@@ -63,18 +63,26 @@ const App = () => {
     },
     {
       title: "Infrastructure & Systèmes",
-    icon: <Server className="w-5 h-5 text-emerald-400" />,
-    skills: [ "Architecture DMZ, VLANs, segmentation réseau","Administration Windows Serveur / Linux, Active Directory","Virtualisation : Hyper-V, Proxmox","VPN site à site"]
+      icon: <Server className="w-5 h-5 text-emerald-400" />,
+      skills: [
+        "Architecture DMZ, VLANs, segmentation réseau",
+        "Administration Windows Serveur / Linux, Active Directory",
+        "Virtualisation : Hyper-V, Proxmox",
+        "VPN site à site"
+      ]
     },
     {
       title: "Réseau",
-    icon: <Wifi className="w-5 h-5 text-blue-400" />,
-    skills: ["Switching, VLAN, DNS/DHCP","Configuration VPN et routage inter-VLANs"]
+      icon: <Wifi className="w-5 h-5 text-blue-400" />,
+      skills: [
+        "Switching, VLAN, DNS/DHCP",
+        "Configuration VPN et routage inter-VLANs"
+      ]
     },
     {
       title: "Cloud & Services",
-    icon: <Cloud className="w-5 h-5 text-purple-400" />,
-    skills: ["M365", "Powershell (M365, AD)", "Bash"]
+      icon: <Layers className="w-5 h-5 text-purple-400" />, 
+      skills: ["M365", "Powershell (M365, AD)", "Bash"]
     }
   ];
 
