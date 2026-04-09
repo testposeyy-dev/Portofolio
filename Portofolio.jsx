@@ -57,24 +57,24 @@ const App = () => {
 
   const skillGroups = [
     {
-      title: "Réseau & Télécom",
-      icon: <Wifi className="w-5 h-5 text-blue-400" />,
-      skills: ["VLAN & Routage Inter-VLAN", "WiFi Aruba (Audit/Heatmaps)", "Routage", "Protocoles (TCP/IP, DNS, DHCP)"]
-    },
-    {
-      title: "Systèmes & Virtualisation",
-      icon: <Server className="w-5 h-5 text-emerald-400" />,
-      skills: ["Windows Server (ADDS, DNS, GPO)", "Virtualisation (VMware, Proxmox)", "Migration dynamique VM", "Linux (Debian/Ubuntu)"]
-    },
-    {
-      title: "Sécurité & Backup",
+      title: "Cybersécurité",
       icon: <Lock className="w-5 h-5 text-red-400" />,
-      skills: ["Sauvegarde Beemo", "Cybersécurité (ANSSI)", "MDM SOTI (Terminaux Zebra)", "Gestion des correctifs"]
+      skills: ["Pare-feu : OPNsense", "GPO sécurité", "SIEM Wazuh"]
     },
     {
-      title: "Support & Gestion",
-      icon: <Monitor className="w-5 h-5 text-purple-400" />,
-      skills: ["Maintenance préventive/curative", "Ticketing & Support N1/N2", "Préparation postes & mobiles", "GLPI / Asset Management"]
+      title: "Infrastructure & Systèmes",
+    icon: <Server className="w-5 h-5 text-emerald-400" />,
+    skills: [ "Architecture DMZ, VLANs, segmentation réseau","Administration Windows Serveur / Linux, Active Directory","Virtualisation : Hyper-V, Proxmox","VPN site à site"]
+    },
+    {
+      title: "Réseau",
+    icon: <Wifi className="w-5 h-5 text-blue-400" />,
+    skills: ["Switching, VLAN, DNS/DHCP","Configuration VPN et routage inter-VLANs"]
+    },
+    {
+      title: "Cloud & Services",
+    icon: <Cloud className="w-5 h-5 text-purple-400" />,
+    skills: ["M365", "Powershell (M365, AD)", "Bash"]
     }
   ];
 
