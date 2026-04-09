@@ -513,36 +513,49 @@ const App = () => {
         </div>
       </section>
 
-      {/* Certifications Section */}
-      <section id="certifications" className="py-32 px-4 bg-slate-900/30 relative overflow-hidden border-t border-slate-900">
-        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px]"></div>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-black text-white mb-6 tracking-tighter uppercase">Dossier E4 & Certifications</h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto rounded-full"></div>
+{/* Certifications Section */}
+<section id="certifications" className="py-32 px-4 bg-slate-900/30 relative overflow-hidden border-t border-slate-900">
+  <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px]"></div>
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-20">
+      <h2 className="text-4xl font-black text-white mb-6 tracking-tighter uppercase">Dossier E4 & Certifications</h2>
+      <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto rounded-full"></div>
+    </div>
+    
+    <div className="grid md:grid-cols-3 gap-8">
+      {documents.map((doc, idx) => (
+        <div key={idx} className="p-10 bg-slate-950 border border-slate-800 rounded-[2.5rem] hover:border-blue-500 transition-all group shadow-2xl relative flex flex-col items-start text-left">
+          <div className="p-5 bg-slate-900 rounded-3xl w-fit mb-8 group-hover:scale-110 transition-transform">
+            {doc.icon}
           </div>
+          <h3 className="text-2xl font-black text-white mb-4 tracking-tight">{doc.title}</h3>
+          <p className="text-slate-500 mb-10 text-base leading-relaxed font-medium flex-grow">{doc.desc}</p>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {documents.map((doc, idx) => (
-              <div key={idx} className="p-10 bg-slate-950 border border-slate-800 rounded-[2.5rem] hover:border-blue-500 transition-all group shadow-2xl relative flex flex-col items-start">
-                <div className="p-5 bg-slate-900 rounded-3xl w-fit mb-8 group-hover:scale-110 transition-transform">
-                  {doc.icon}
-                </div>
-                <h3 className="text-2xl font-black text-white mb-4 tracking-tight text-left">{doc.title}</h3>
-                <p className="text-slate-500 mb-10 text-base leading-relaxed font-medium text-left flex-grow">{doc.desc}</p>
-                
-                <a 
-                  href={doc.link}
-                  download
-                  className="inline-flex items-center gap-3 text-[10px] font-black text-blue-400 hover:text-blue-300 uppercase tracking-[0.25em]"
-                >
-                  <Download className="w-5 h-5" /> Télécharger
-                </a>
-              </div>
-            ))}
+          {/* NOUVEAU BLOC BOUTONS DOUBLE ACTION */}
+          <div className="flex items-center gap-5 w-full pt-4 border-t border-slate-900">
+            <a 
+              href={doc.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-3 py-3 bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all border border-blue-600/20"
+            >
+              <Eye className="w-4 h-4" /> Visualiser
+            </a>
+            
+            <a 
+              href={doc.link}
+              download
+              className="p-3 bg-slate-900 hover:bg-slate-800 text-slate-500 hover:text-white rounded-xl transition-all border border-slate-800"
+              title="Télécharger"
+            >
+              <Download className="w-5 h-5" />
+            </a>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Veille Technologique Section */}
       <section id="veille" className="py-32 px-4 bg-slate-950 border-t border-slate-900">
