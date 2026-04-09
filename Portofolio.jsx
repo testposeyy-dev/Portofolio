@@ -344,7 +344,7 @@ const App = () => {
             </div>
             <div className="pt-6">
               <div className="p-8 bg-slate-950 rounded-3xl border border-slate-800 shadow-xl inline-block group hover:border-blue-500/40 transition-all">
-                <div className="text-4xl font-black text-blue-500 mb-1 group-hover:scale-105 transition-transform origin-left">SISR</div>
+                <div className="text-4xl font-black text-blue-500 mb-1 group-hover:scale-105 transition-transform origin-left">BTS SIO SISR</div>
                 <div className="text-[10px] uppercase text-slate-500 font-black tracking-[0.2em]">Option de spécialisation</div>
               </div>
             </div>
