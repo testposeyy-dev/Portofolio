@@ -636,7 +636,7 @@ const App = () => {
             </p>
             <div className="flex gap-6">
               <a href="#" className="p-4 bg-slate-900 rounded-2xl text-slate-400 hover:text-blue-400 border border-slate-800 transition-all hover:-translate-y-2 shadow-lg"><Linkedin className="w-7 h-7" /></a>
-              <a href="mailto:theo.chatelier@outlook.fr" className="p-4 bg-slate-900 rounded-2xl text-slate-400 hover:text-white border border-slate-800 transition-all hover:-translate-y-2 shadow-lg"><Mail className="w-7 h-7" /></a>
+              <a href="mailto:tchatelier13@gmail.com" className="p-4 bg-slate-900 rounded-2xl text-slate-400 hover:text-white border border-slate-800 transition-all hover:-translate-y-2 shadow-lg"><Mail className="w-7 h-7" /></a>
             </div>
           </div>
           
