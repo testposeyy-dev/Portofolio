@@ -467,34 +467,47 @@ const App = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {projects.filter(p => activeTab === 'all' || p.category === activeTab).map((proj, idx) => (
-              <div key={idx} className="group p-1 rounded-[2.5rem] bg-slate-900/50 hover:bg-gradient-to-br hover:from-blue-600/20 hover:to-emerald-600/20 transition-all border border-slate-800 shadow-xl h-full">
-                <div className="bg-slate-950 p-10 rounded-[2.2rem] h-full flex flex-col">
-                  <div className="flex justify-between items-start mb-8">
-                    <div className="p-4 bg-slate-900 rounded-2xl group-hover:rotate-6 transition-transform shadow-inner">{proj.icon}</div>
-                    <span className="px-3 py-1 text-[9px] font-black uppercase tracking-widest bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">{proj.category}</span>
-                  </div>
-                  
-                  <h3 className="text-2xl font-black text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors text-left">{proj.title}</h3>
-                  <p className="text-slate-400 text-sm mb-10 flex-grow leading-relaxed font-medium italic text-left">
-                    {proj.desc}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-10">
-                    {proj.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 text-[9px] uppercase tracking-tighter font-black bg-slate-900 text-slate-500 rounded-lg border border-slate-800">{tag}</span>
-                    ))}
-                  </div>
+            <div key={idx} className="group p-1 rounded-[2.5rem] bg-slate-900/50 hover:bg-gradient-to-br hover:from-blue-600/20 hover:to-emerald-600/20 transition-all border border-slate-800 shadow-xl h-full text-left">
+  <div className="bg-slate-950 p-8 md:p-10 rounded-[2.2rem] h-full flex flex-col">
+    <div className="flex justify-between items-start mb-8">
+      <div className="p-4 bg-slate-900 rounded-2xl group-hover:rotate-6 transition-transform shadow-inner">{proj.icon}</div>
+      <span className="px-3 py-1 text-[9px] font-black uppercase tracking-widest bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">{proj.category}</span>
+    </div>
+    
+    <h3 className="text-2xl font-black text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors">{proj.title}</h3>
+    <p className="text-slate-400 text-sm mb-10 flex-grow leading-relaxed font-medium italic">
+      {proj.desc}
+    </p>
+    
+    <div className="flex flex-wrap gap-2 mb-10">
+      {proj.tags.map(tag => (
+        <span key={tag} className="px-3 py-1 text-[9px] uppercase tracking-tighter font-black bg-slate-900 text-slate-500 rounded-lg border border-slate-800">{tag}</span>
+      ))}
+    </div>
 
-                  <a 
-                    href={proj.docLink}
-                    download
-                    className="w-full inline-flex items-center justify-center gap-3 py-4 bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all border border-blue-600/20 group/btn"
-                  >
-                    <FileDown className="w-4 h-4 group-hover/btn:animate-bounce" />
-                    Télécharger le document
-                  </a>
-                </div>
+    {/* BLOC BOUTONS : VOIR ET TÉLÉCHARGER */}
+    <div className="flex gap-3">
+      <a 
+        href={proj.docLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex-1 inline-flex items-center justify-center gap-3 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all shadow-lg shadow-blue-600/20 group/btn"
+      >
+        <Eye className="w-4 h-4" />
+        Visualiser
+      </a>
+      
+      <a 
+        href={proj.docLink}
+        download
+        className="px-5 inline-flex items-center justify-center bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white rounded-2xl transition-all border border-slate-800"
+        title="Télécharger"
+      >
+                   <FileDown className="w-5 h-5" />
+                </a>
+               </div>
               </div>
+            </div>
             ))}
           </div>
         </div>
