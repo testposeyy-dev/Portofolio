@@ -309,7 +309,7 @@ const App = () => {
           </h1>
           
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-12 leading-relaxed font-medium">
-            Étudiant en <span className="text-white">BTS SIO option SISR</span>. Passionné par l'infrastructure réseau, la virtualisation et la cybersécurité opérationnelle.
+            Étudiant en <span className="text-white">BTS SIO option SISR</span> chez Solarys "Groupement les Mousquetaires". Passionné par l'infrastructure réseau, la virtualisation et la cybersécurité opérationnelle.
           </p>
           
           <div className="flex flex-wrap justify-center gap-5">
