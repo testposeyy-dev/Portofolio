@@ -320,6 +320,15 @@ const App = () => {
             >
               <FileDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" /> Télécharger mon CV
             </a>
+            <a 
+             href="/CV_CHATELIER_Theo.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group px-8 py-5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 font-black rounded-2xl transition-all border border-blue-500/20 flex items-center gap-3 uppercase text-xs tracking-widest inline-flex backdrop-blur-sm"
+            >
+            <Eye className="w-5 h-5 group-hover:scale-110 transition-transform" /> 
+            Voir mon CV
+            </a>
             <a href="#contact" className="px-10 py-5 bg-slate-800/50 hover:bg-slate-800 text-white font-black rounded-2xl transition-all flex items-center gap-3 border border-slate-700 uppercase text-xs tracking-widest backdrop-blur-sm">
               Me contacter <ChevronRight className="w-5 h-5 text-blue-400" />
             </a>
@@ -587,58 +596,6 @@ const App = () => {
           </div>
         </div>
       </section>
-
-{/* CV Preview Section */}
-<section id="cv-preview" className="py-20 px-4 bg-slate-900/50">
-  <div className="max-w-4xl mx-auto">
-    <div className="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden group">
-      {/* Effet de lumière en fond */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[80px] rounded-full"></div>
-      
-      <div className="relative z-10 flex flex-col md:flex-row gap-10 items-center">
-        {/* Colonne Gauche : Photo/Avatar & Quick Info */}
-        <div className="flex flex-col items-center space-y-4">
-          <div className="w-32 h-32 bg-gradient-to-tr from-blue-600 to-emerald-500 rounded-3xl rotate-3 flex items-center justify-center shadow-2xl group-hover:rotate-0 transition-transform duration-500">
-            <span className="text-4xl font-black text-white">TC</span>
-          </div>
-          <div className="text-center">
-            <h3 className="text-xl font-black text-white">Théo Chatelier</h3>
-            <p className="text-blue-400 text-xs font-bold uppercase tracking-widest">Disponible Sept. 2024</p>
-          </div>
-        </div>
-
-        {/* Colonne Droite : Points clés */}
-        <div className="flex-1 space-y-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-4 bg-slate-800/40 rounded-2xl border border-slate-700/50">
-              <p className="text-[10px] text-slate-500 uppercase font-black mb-1">Formation</p>
-              <p className="text-sm text-slate-200 font-bold">BTS SIO SISR (2ème année)</p>
-            </div>
-            <div className="p-4 bg-slate-800/40 rounded-2xl border border-slate-700/50">
-              <p className="text-[10px] text-slate-500 uppercase font-black mb-1">Spécialité</p>
-              <p className="text-sm text-slate-200 font-bold">Infras & Cybersécurité</p>
-            </div>
-          </div>
-
-          <p className="text-slate-400 text-sm leading-relaxed italic">
-            "Technicien polyvalent avec une solide expérience en alternance chez Solarys. 
-            Maîtrise des environnements Windows/Linux, de la virtualisation (Proxmox/Hyper-V) 
-            et des solutions réseaux critiques."
-          </p>
-
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a 
-              href="/CV_CHATELIER_Theo.pdf" 
-              className="flex-1 bg-blue-600 hover:bg-blue-500 text-white text-center py-4 rounded-xl font-black text-[10px] uppercase tracking-widest transition-all flex items-center justify-center gap-2"
-            >
-              <Download className="w-4 h-4" /> Voir le CV Complet (PDF)
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
       {/* Footer / Contact */}
       <footer id="contact" className="py-32 bg-slate-950 border-t border-slate-900 px-4">
