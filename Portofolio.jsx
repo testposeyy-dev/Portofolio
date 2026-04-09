@@ -171,26 +171,45 @@ const App = () => {
 
   const experiences = [
     {
-      company: "Solarys, Vauvert",
-      role: "Alternant BTS SIO SISR",
-      period: "2024 - Présent",
-      tasks: ["Maintenance préventive et curative du parc client", "Support technique aux utilisateurs de niveau 1 et 2", "Administration des services réseau et supervision"]
-    },
-    {
-      company: "Digit'hall",
-      role: "Stages Bac Pro SN",
-      period: "2023 - 2024",
+      company: "Solarys \"Groupement les Mousquetaires\", Vauvert",
+      role: "Technicien Support Informatique en alternance",
+      period: "Août 2024 - Présent",
       tasks: [
-        "Création de VLAN et routage Intervlan sur équipements Cisco/HP",
-        "Configuration de serveurs et migration dynamique de machines virtuelles",
-        "Installation et paramétrage d'un système de sauvegarde BEEMO"
+        "Infogérance : Support N1/N2 via GLPI, diagnostic, résolution d'incidents et suivi utilisateurs",
+        "Migration de parc informatique (Windows 10 vers Windows 11)",
+        "Création de liens SFTP sécurisés vers des prestataires",
+        "Maintenance informatique du site (Logiciel / Matériel)",
+        "Réseaux : Paramétrage de VLAN",
+        "Téléphonie IP : Création de numéros, paramétrage de standards et DECT",
+        "Solution MDM : Création de profils et intégration du matériel",
+        "Wifi : Réalisation d'audits et de Heatmaps"
       ]
     },
     {
-      company: "EPC FRANCE",
-      role: "Stage 1ère Bac Pro SN",
+      company: "Digit'hall, Saint Rémy de Provence",
+      role: "Stage Bac Pro SN (12 semaines)",
+      period: "2024",
+      tasks: [
+        "Création de VLAN et routage InterVlan",
+        "Configuration de serveurs et migration dynamique de VMs",
+        "Installation d'un système de sauvegarde (Beemo)"
+      ]
+    },
+    {
+      company: "EPC FRANCE, Saint Martin de Crau",
+      role: "Stage Bac Pro SN (4 semaines)",
       period: "2023",
-      tasks: ["Déploiement et configuration de 50+ postes de travail", "Préparation et enrôlement de smartphones via solution MDM"]
+      tasks: [
+        "Configurations de postes de travail et de smartphones"
+      ]
+    },
+    {
+      company: "Mairie de TARASCON",
+      role: "Stage Bac Pro SN (6 semaines)",
+      period: "2022",
+      tasks: [
+        "Configuration d'une borne Wifi"
+      ]
     }
   ];
 
