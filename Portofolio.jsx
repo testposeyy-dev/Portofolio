@@ -230,7 +230,7 @@ const App = () => {
       title: "Certification PIX",
       desc: "Attestation des compétences numériques (Maîtrise des outils & sécurité).",
       icon: <Award className="w-8 h-8 text-emerald-500" />,
-      link: "/docs/certif_pix.pdf" 
+      link: "pix.pdf" 
     }
   ];
 
