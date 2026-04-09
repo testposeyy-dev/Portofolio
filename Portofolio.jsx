@@ -188,7 +188,7 @@ const App = () => {
     {
       company: "Digit'hall, Saint Rémy de Provence",
       role: "Stage Bac Pro SN (12 semaines)",
-      period: "2024",
+      period: "2023 - 2024",
       tasks: [
         "Création de VLAN et routage InterVlan",
         "Configuration de serveurs et migration dynamique de VMs",
