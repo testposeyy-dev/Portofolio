@@ -632,7 +632,7 @@ const App = () => {
               <span className="font-black text-3xl text-white tracking-tighter uppercase">Théo Chatelier</span>
             </div>
             <p className="text-slate-500 font-medium text-lg leading-relaxed italic">
-              Technicien systèmes et réseaux focalisé sur l'efficience opérationnelle et la sécurité des infrastructures.
+              Technicien Informatique.
             </p>
             <div className="flex gap-6">
               <a href="#" className="p-4 bg-slate-900 rounded-2xl text-slate-400 hover:text-blue-400 border border-slate-800 transition-all hover:-translate-y-2 shadow-lg"><Linkedin className="w-7 h-7" /></a>
