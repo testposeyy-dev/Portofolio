@@ -94,7 +94,7 @@ const App = () => {
       desc: "Modernisation infrastructurelle globale : ToIP Ascom, WiFi Aruba (Audit & Heatmaps) et MDM SOTI pour terminaux Zebra.",
       tags: ["Aruba", "SOTI MDM", "Ascom", "WiFi Audit"],
       icon: <Network className="w-6 h-6 text-emerald-400" />,
-      docLink: "/docs/projet_convergence.pdf",
+      docLink: "/docs/Solarys Projet Convergence.pdf",
       annexes: [
         { title: "Téléphonie IP", link: "/docs/Telephone-IP.pdf" },
         { title: "Annuaire Cisco Jabber", link: "/docs/Annuaire_Cisco_Jabber.pdf" },
@@ -107,7 +107,7 @@ const App = () => {
       desc: "Configuration d'un client SFTP sur Windows Server. Ouverture des flux réseau spécifiques et développement de scripts d'automatisation.",
       tags: ["Windows Server", "SFTP", "Scripting", "Réseau"],
       icon: <Share2 className="w-6 h-6 text-orange-400" />,
-      docLink: "/docs/projet_sftp.pdf"
+      docLink: "/docs/Solarys SFTP LeRoy.docx.pdf"
     },
     {
       title: "Configuration Alarme PTI",
