@@ -96,7 +96,7 @@ const App = () => {
       icon: <Network className="w-6 h-6 text-emerald-400" />,
       docLink: "/docs/projet_convergence.pdf",
       annexes: [
-        { title: "Téléphonie IP", link: "/docs/annexe_wifi_aruba.pdf" },
+        { title: "Téléphonie IP", link: "/docs/Telephone-IP" },
         { title: "Annuaire Cisco Jabber", link: "/docs/annexe_soti_mdm.pdf" },
         { title: "SOTI MobiControl", link: "/docs/annexe_heatmaps.pdf" }
       ]
