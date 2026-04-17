@@ -123,7 +123,7 @@ const App = () => {
       desc: "Déploiement et configuration complète de la solution GLPI pour la gestion du parc informatique et le suivi du helpdesk.",
       tags: ["GLPI", "ITSM", "Inventaire", "Ticketing"],
       icon: <Monitor className="w-6 h-6 text-blue-400" />,
-      docLink: "/docs/projet_glpi.pdf"
+      docLink: "/docs/SISR GLPI.pdf"
     },
     {
       title: "Mise en place Serveur Nextcloud",
@@ -131,7 +131,7 @@ const App = () => {
       desc: "Installation d'une solution cloud privée collaborative pour le stockage et le partage de fichiers sécurisé.",
       tags: ["Nextcloud", "Cloud Privé", "Storage", "Linux"],
       icon: <Database className="w-6 h-6 text-emerald-400" />,
-      docLink: "/docs/projet_nextcloud.pdf"
+      docLink: "/docs/SISR Serveur Nextcloud.pdf"
     },
     {
       title: "Mise en place Serveur Owncloud",
@@ -139,7 +139,7 @@ const App = () => {
       desc: "Configuration d'un serveur Owncloud pour la gestion de fichiers en entreprise avec mise en place de politiques de quotas.",
       tags: ["Owncloud", "Collaboration", "Linux", "Apache"],
       icon: <Globe className="w-6 h-6 text-indigo-400" />,
-      docLink: "/docs/projet_owncloud.pdf"
+      docLink: "/docs/SISR Serveur Owncloud.pdf"
     },
     {
       title: "Création site Web",
@@ -163,7 +163,7 @@ const App = () => {
       desc: "Architecture haute disponibilité : Réplication de contrôleurs de domaine (DC), gestion FSMO et DNS redondé.",
       tags: ["Windows Server", "ADDS", "FSMO", "DNS"],
       icon: <ShieldCheck className="w-6 h-6 text-blue-400" />,
-      docLink: "/docs/projet_ad.pdf"
+      docLink: "/docs/SISR Redondance AD.pdf"
     },
     {
       title: "Déploiement Application via GPO",
