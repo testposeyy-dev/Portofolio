@@ -115,7 +115,7 @@ const App = () => {
       desc: "Installation et paramétrage d'un système de Protection du Travailleur Isolé (PTI) intégré à l'infrastructure réseau.",
       tags: ["Sécurité", "IoT", "PTI", "Alarme"],
       icon: <Smartphone className="w-6 h-6 text-red-400" />,
-      docLink: "/docs/projet_alarme_pti.pdf"
+      docLink: "/docs/Solarys Configuration PTI.pdf"
     },
     {
       title: "Mise en place Serveur GLPI",
@@ -171,7 +171,7 @@ const App = () => {
       desc: "Automatisation du déploiement logiciel : Création de paquets MSI et application de stratégies de groupe (GPO).",
       tags: ["GPO", "MSI", "Automation", "Deployment"],
       icon: <Package className="w-6 h-6 text-purple-400" />,
-      docLink: "/docs/projet_gpo.pdf"
+      docLink: "/docs/Solarys Déploiement Wireshark via GPO.pdf"
     }
   ];
 
