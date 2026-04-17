@@ -97,8 +97,8 @@ const App = () => {
       docLink: "/docs/projet_convergence.pdf",
       annexes: [
         { title: "Téléphonie IP", link: "/docs/Telephone-IP.pdf" },
-        { title: "Annuaire Cisco Jabber", link: "/docs/soti.pdf" },
-        { title: "SOTI MobiControl", link: "/docs/annexe_heatmaps.pdf" }
+        { title: "Annuaire Cisco Jabber", link: "/docs/Annuaire_Cisco_Jabber.pdf" },
+        { title: "SOTI MobiControl", link: "/docs/soti.pdf" }
       ]
     },
     {
