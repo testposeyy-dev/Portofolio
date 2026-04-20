@@ -566,7 +566,7 @@ const App = () => {
                     href={doc.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-3 py-3 bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all border border-blue-100 hover:border-blue-600"
+                    className="flex-1 inline-flex items-center justify-center gap-3 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all shadow-md shadow-blue-600/20"
                   >
                     <Eye className="w-4 h-4" /> Visualiser
                   </a>
