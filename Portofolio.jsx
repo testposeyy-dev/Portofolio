@@ -101,6 +101,14 @@ const App = () => {
       ]
     },
     {
+      title: "ITWay",
+      category: "SISR",
+      desc: "Conception d'une infrastructure multisite sécurisée sous Proxmox avec tunnel VPN, domaine Active Directory et services...",
+      tags: ["Windows Server", "Virtualisation", "Cisco", "Réseau","VPN"],
+      icon: <Share2 className="w-6 h-6 text-orange-500" />,
+      docLink: "/docs/Solarys SFTP LeRoy.docx.pdf"
+    },
+    {
       title: "Projet SFTP Leroy",
       category: "Entreprise",
       desc: "Configuration d'un client SFTP sur Windows Server. Ouverture des flux réseau spécifiques et développement de scripts d'automatisation.",
