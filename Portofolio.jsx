@@ -51,7 +51,7 @@ const App = () => {
     { name: 'Expériences', href: '#experience' },
     { name: 'Réalisations', href: '#projects' },
     { name: 'Certifications', href: '#certifications' },
-    { name: 'Veille', href: '#veille' },
+    { name: 'Veille Technologique', href: '#veille' },
     { name: 'Contact', href: '#contact' },
   ];
 
