@@ -147,7 +147,7 @@ const App = () => {
       desc: "Conception et développement de ce portfolio professionnel présentant mes compétences et expériences techniques.",
       tags: ["React", "Tailwind CSS", "UI/UX", "Portfolio"],
       icon: <Globe className="w-6 h-6 text-purple-400" />,
-      docLink: "/docs/projet_portfolio.pdf"
+      docLink: "/docs/Portfolio.pdf"
     },
     {
       title: "Veille Technologique",
