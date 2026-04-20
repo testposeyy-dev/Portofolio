@@ -49,8 +49,8 @@ const App = () => {
     { name: 'À Propos', href: '#about' },
     { name: 'Compétences', href: '#skills' },
     { name: 'Expériences', href: '#experience' },
-    { name: 'Réalisations', href: '#projects' },
     { name: 'Certifications', href: '#certifications' },
+    { name: 'Réalisations', href: '#projects' },
     { name: 'Veille Technologique', href: '#veille' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -365,7 +365,6 @@ const App = () => {
           </div>
           
           <div className="relative group">
-            {/* L'image terminal reste un peu sombre pour le contraste, mais avec un conteneur plus clair */}
             <div className="aspect-[4/5] rounded-[2.5rem] bg-gradient-to-br from-blue-700 via-indigo-800 to-slate-800 overflow-hidden border border-slate-200 shadow-2xl relative">
               <div className="absolute inset-0 flex items-center justify-center opacity-20">
                 <Terminal className="w-72 h-72 text-white" />
@@ -443,8 +442,52 @@ const App = () => {
         </div>
       </section>
 
-      {/* Realisations Section */}
-      <section id="projects" className="py-32 px-4 bg-white">
+      {/* Certifications Section (Moved before Réalisations) */}
+      <section id="certifications" className="py-32 px-4 bg-white relative overflow-hidden">
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-[100px]"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-black text-slate-900 mb-6 tracking-tighter uppercase">Dossier E4 & Certifications</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {documents.map((doc, idx) => (
+              <div key={idx} className="p-10 bg-white border border-slate-200 rounded-[2.5rem] hover:border-blue-300 transition-all group shadow-sm hover:shadow-md relative flex flex-col items-start text-left">
+                <div className="p-5 bg-slate-50 border border-slate-100 rounded-3xl w-fit mb-8 group-hover:scale-110 transition-transform">
+                  {doc.icon}
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">{doc.title}</h3>
+                <p className="text-slate-600 mb-10 text-base leading-relaxed font-medium flex-grow">{doc.desc}</p>
+                
+                {/* NOUVEAU BLOC BOUTONS DOUBLE ACTION */}
+                <div className="flex items-center gap-5 w-full pt-6 border-t border-slate-100">
+                  <a 
+                    href={doc.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-3 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all shadow-md shadow-blue-600/20"
+                  >
+                    <Eye className="w-4 h-4" /> Visualiser
+                  </a>
+                  
+                  <a 
+                    href={doc.link}
+                    download
+                    className="p-3 bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-900 rounded-xl transition-all border border-slate-200 shadow-sm"
+                    title="Télécharger"
+                  >
+                    <Download className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Realisations Section (Moved after Certifications) */}
+      <section id="projects" className="py-32 px-4 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="space-y-4 text-left">
@@ -454,7 +497,7 @@ const App = () => {
               </p>
             </div>
             
-            <div className="flex bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+            <div className="flex bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm">
               {[
                 { id: 'all', label: 'Tous' },
                 { id: 'SISR', label: 'SISR' },
@@ -473,7 +516,7 @@ const App = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {projects.filter(p => activeTab === 'all' || p.category === activeTab).map((proj, idx) => (
-            <div key={idx} className="group p-1 rounded-[2.5rem] bg-slate-50 hover:bg-gradient-to-br hover:from-blue-100 hover:to-emerald-100 transition-all border border-slate-200 shadow-sm hover:shadow-md h-full text-left">
+            <div key={idx} className="group p-1 rounded-[2.5rem] bg-slate-100 hover:bg-gradient-to-br hover:from-blue-100 hover:to-emerald-100 transition-all border border-slate-200 shadow-sm hover:shadow-md h-full text-left">
               <div className="bg-white p-8 md:p-10 rounded-[2.2rem] h-full flex flex-col border border-slate-50">
                 <div className="flex justify-between items-start mb-8">
                   <div className="p-4 bg-slate-50 rounded-2xl group-hover:rotate-6 transition-transform border border-slate-100">{proj.icon}</div>
@@ -537,50 +580,6 @@ const App = () => {
                 </div>
               </div>
             </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications Section */}
-      <section id="certifications" className="py-32 px-4 bg-slate-50 relative overflow-hidden border-t border-slate-200">
-        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-[100px]"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-black text-slate-900 mb-6 tracking-tighter uppercase">Dossier E4 & Certifications</h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-emerald-600 mx-auto rounded-full"></div>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {documents.map((doc, idx) => (
-              <div key={idx} className="p-10 bg-white border border-slate-200 rounded-[2.5rem] hover:border-blue-300 transition-all group shadow-sm hover:shadow-md relative flex flex-col items-start text-left">
-                <div className="p-5 bg-slate-50 border border-slate-100 rounded-3xl w-fit mb-8 group-hover:scale-110 transition-transform">
-                  {doc.icon}
-                </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">{doc.title}</h3>
-                <p className="text-slate-600 mb-10 text-base leading-relaxed font-medium flex-grow">{doc.desc}</p>
-                
-                {/* NOUVEAU BLOC BOUTONS DOUBLE ACTION */}
-                <div className="flex items-center gap-5 w-full pt-6 border-t border-slate-100">
-                  <a 
-                    href={doc.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-3 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all shadow-md shadow-blue-600/20"
-                  >
-                    <Eye className="w-4 h-4" /> Visualiser
-                  </a>
-                  
-                  <a 
-                    href={doc.link}
-                    download
-                    className="p-3 bg-white hover:bg-slate-50 text-slate-600 hover:text-slate-900 rounded-xl transition-all border border-slate-200 shadow-sm"
-                    title="Télécharger"
-                  >
-                    <Download className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
             ))}
           </div>
         </div>
