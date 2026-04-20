@@ -224,7 +224,7 @@ const App = () => {
       title: "Tableau de Synthèse (E4)",
       desc: "Récapitulatif officiel des compétences SISR validées durant le cursus BTS SIO.",
       icon: <FileText className="w-8 h-8 text-blue-500" />,
-      link: "/docs/tableau_synthese_E4.pdf" 
+      link: "/docs/Tableau de Synthèse.pdf" 
     },
     {
       title: "SecNumacadémie (ANSSI)",
