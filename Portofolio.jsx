@@ -88,7 +88,7 @@ const App = () => {
 
   const projects = [
     {
-      title: "Projet Convergence - Agro Mousquetaires",
+      title: "Projet Convergence",
       category: "Entreprise",
       desc: "Modernisation infrastructurelle globale : ToIP Ascom, WiFi Aruba (Audit & Heatmaps) et MDM SOTI pour terminaux Zebra.",
       tags: ["Aruba", "SOTI MDM", "Ascom", "WiFi Audit"],
@@ -141,7 +141,7 @@ const App = () => {
       docLink: "/docs/SISR Serveur Owncloud.pdf"
     },
     {
-      title: "Création site Web",
+      title: "Portfolio",
       category: "SISR",
       desc: "Conception et développement de ce portfolio professionnel présentant mes compétences et expériences techniques.",
       tags: ["React", "Tailwind CSS", "UI/UX", "Portfolio"],
