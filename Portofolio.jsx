@@ -133,14 +133,6 @@ const App = () => {
       docLink: "/docs/SISR GLPI.pdf"
     },
     {
-      title: "Mise en place Serveur Nextcloud",
-      category: "SISR",
-      desc: "Installation d'une solution cloud privée collaborative pour le stockage et le partage de fichiers sécurisé.",
-      tags: ["Nextcloud", "Cloud Privé", "Storage", "Linux"],
-      icon: <Database className="w-6 h-6 text-emerald-500" />,
-      docLink: "/docs/SISR Serveur Nextcloud.pdf"
-    },
-    {
       title: "Mise en place Serveur Owncloud",
       category: "SISR",
       desc: "Configuration d'un serveur Owncloud pour la gestion de fichiers en entreprise avec mise en place de politiques de quotas.",
