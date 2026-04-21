@@ -157,14 +157,6 @@ const App = () => {
       docLink: "/docs/Portfolio.pdf"
     },
     {
-      title: "Veille Technologique",
-      category: "SISR",
-      desc: "Organisation et mise en œuvre d'une veille active sur les innovations technologiques et la cybersécurité.",
-      tags: ["Veille", "RSS", "Cybersécurité", "Innovation"],
-      icon: <BookOpen className="w-6 h-6 text-yellow-500" />,
-      docLink: "/docs/veille_technologique.pdf"
-    },
-    {
       title: "Redondance Active Directory",
       category: "SISR",
       desc: "Architecture haute disponibilité : Réplication de contrôleurs de domaine (DC), gestion FSMO et DNS redondé.",
