@@ -626,12 +626,13 @@ const App = () => {
                     color: "emerald",
                     link: "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2025-ALE-013/"
                   },
-                  { 
-                    tag: "Gouvernance IT", 
-                    title: "CISA : Évolution Cyber", 
-                    desc: "Étude des standards de cybersécurité mondiaux pilotés par la CISA.", 
-                    color: "blue" 
-                  }
+                  {
+                    tag: "Sécurité Système",
+                    title: "Windows : Alertes Secure Boot plus sévères",
+                    desc: "Microsoft renforce la protection de la phase de démarrage de Windows 11. De nouvelles alertes plus strictes sont en préparation pour avertir les utilisateurs en cas de désactivation ou de compromission du Secure Boot, une protection essentielle contre les rootkits.",
+                    color: "blue",
+                    link: "https://www.ginjfo.com/actualites/logiciels/windows-11/windows-microsoft-prepare-des-alertes-secure-boot-plus-severes-20260504"
+                  },
                 ].map((item, i) => (
                   <div key={i} className="group p-8 bg-slate-50 rounded-[2rem] border border-slate-200 hover:bg-white hover:shadow-md transition-all text-left">
                     <div className={`flex items-center gap-4 mb-4`}>
