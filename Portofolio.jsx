@@ -22,10 +22,8 @@ import {
   Package,
   FileDown,
   Rss,
-  BookOpen,
   Bell,
   Eye,
-  Database,
   Monitor,
   Lock,
   Wifi,
@@ -628,16 +626,35 @@ const App = () => {
                     color: "emerald",
                     link: "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2025-ALE-013/"
                   },
-                  { tag: "Gouvernance IT", title: "CISA : Évolution Cyber", desc: "Étude des standards de cybersécurité mondiaux pilotés par la CISA.", color: "blue" }
+                  { 
+                    tag: "Gouvernance IT", 
+                    title: "CISA : Évolution Cyber", 
+                    desc: "Étude des standards de cybersécurité mondiaux pilotés par la CISA.", 
+                    color: "blue" 
+                  }
                 ].map((item, i) => (
                   <div key={i} className="group p-8 bg-slate-50 rounded-[2rem] border border-slate-200 hover:bg-white hover:shadow-md transition-all text-left">
                     <div className={`flex items-center gap-4 mb-4`}>
                       <div className={`w-10 h-[2px] bg-blue-600`}></div>
                       <span className="text-[10px] font-black uppercase tracking-widest text-blue-700">{item.tag}</span>
                     </div>
-                    <h4 className="text-slate-900 text-2xl font-black mb-4 flex items-center gap-3 tracking-tight">
-                      {item.title} <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
-                    </h4>
+                    
+                    {/* Le titre est cliquable si un lien est fourni dans les données */}
+                    {item.link ? (
+                      <a 
+                        href={item.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-slate-900 hover:text-blue-600 text-2xl font-black mb-4 flex items-center gap-3 tracking-tight transition-colors"
+                      >
+                        {item.title} <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                      </a>
+                    ) : (
+                      <h4 className="text-slate-900 text-2xl font-black mb-4 flex items-center gap-3 tracking-tight">
+                        {item.title}
+                      </h4>
+                    )}
+
                     <p className="text-slate-600 text-sm leading-relaxed font-medium italic">
                       {item.desc}
                     </p>
