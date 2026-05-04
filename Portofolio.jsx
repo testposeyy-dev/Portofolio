@@ -621,7 +621,13 @@ const App = () => {
               </h3>
               <div className="space-y-8">
                 {[
-                  { tag: "Sécurité Réseau", title: "Multiples vulnérabilités critiques dans Cisco ASA et FTD", desc: "De multiples vulnérabilités (dont les CVE-2025-20362 et CVE-2025-20333) touchent les serveurs VPN des équipements Cisco. L'éditeur confirme que ces failles sont activement exploitées par des attaquants et permettent de prendre le contrôle total du système à distance.", color: "emerald" },
+                  { 
+                    tag: "Sécurité Réseau", 
+                    title: "Multiples vulnérabilités critiques dans Cisco ASA et FTD", 
+                    desc: "De multiples vulnérabilités (dont les CVE-2025-20362 et CVE-2025-20333) touchent les serveurs VPN des équipements Cisco. L'éditeur confirme que ces failles sont activement exploitées par des attaquants et permettent de prendre le contrôle total du système à distance.", 
+                    color: "emerald",
+                    link: "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2025-ALE-013/"
+                  },
                   { tag: "Gouvernance IT", title: "CISA : Évolution Cyber", desc: "Étude des standards de cybersécurité mondiaux pilotés par la CISA.", color: "blue" }
                 ].map((item, i) => (
                   <div key={i} className="group p-8 bg-slate-50 rounded-[2rem] border border-slate-200 hover:bg-white hover:shadow-md transition-all text-left">
