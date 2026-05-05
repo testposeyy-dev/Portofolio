@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Server, 
   Network, 
@@ -28,13 +28,22 @@ import {
   Lock,
   Wifi,
   Share2,
-  Paperclip
+  Paperclip,
+  RefreshCw,
+  Send
 } from 'lucide-react';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('all');
   const [scrolled, setScrolled] = useState(false);
+
+  // --- NOUVEAUX ÉTATS POUR LE CAPTCHA MODAL ---
+  const canvasRef = useRef(null);
+  const [captchaCode, setCaptchaCode] = useState('');
+  const [captchaInput, setCaptchaInput] = useState('');
+  const [isCaptchaModalOpen, setIsCaptchaModalOpen] = useState(false);
+  const [toast, setToast] = useState({ visible: false, message: '', type: 'success' });
 
   // Gestion du scroll pour l'effet de la barre de navigation
   useEffect(() => {
@@ -43,6 +52,107 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // --- LOGIQUE CAPTCHA (REACT) ---
+  const generateRandomString = (length) => {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Pas de O, 0, I, 1
+    let result = '';
+    for (let i = 0; i < length; i++) {
+      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+  };
+
+  const drawCaptcha = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Fond
+    ctx.fillStyle = '#f8fafc'; // slate-50
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    const newCode = generateRandomString(5);
+    setCaptchaCode(newCode);
+
+    // Bruit : Lignes
+    for (let i = 0; i < 5; i++) {
+      ctx.beginPath();
+      ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.strokeStyle = `rgba(${Math.random()*100}, ${Math.random()*100}, 255, 0.3)`;
+      ctx.lineWidth = Math.random() * 2 + 1;
+      ctx.stroke();
+    }
+
+    // Texte
+    const textColors = ['#2563eb', '#059669', '#4f46e5', '#db2777', '#ea580c'];
+    ctx.font = 'bold 32px "Courier New", Courier, monospace';
+    ctx.textBaseline = 'middle';
+
+    for (let i = 0; i < newCode.length; i++) {
+      const char = newCode[i];
+      const color = textColors[Math.floor(Math.random() * textColors.length)];
+      
+      ctx.save();
+      const x = 30 + (i * 30);
+      const y = canvas.height / 2 + (Math.random() * 10 - 5);
+      
+      ctx.translate(x, y);
+      const angle = (Math.random() - 0.5) * 0.5; 
+      ctx.rotate(angle);
+      
+      ctx.fillStyle = color;
+      ctx.fillText(char, 0, 0);
+      ctx.restore();
+    }
+
+    // Bruit : Points
+    for (let i = 0; i < 40; i++) {
+      ctx.beginPath();
+      ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(100, 100, 100, 0.2)`;
+      ctx.fill();
+    }
+  };
+
+  useEffect(() => {
+    if (isCaptchaModalOpen) {
+      setTimeout(() => drawCaptcha(), 100); // Délai pour s'assurer que le modal est bien affiché avant de dessiner
+    }
+  }, [isCaptchaModalOpen]);
+
+  const handleRefreshCaptcha = () => {
+    drawCaptcha();
+    setCaptchaInput('');
+  };
+
+  const showToastMsg = (message, type) => {
+    setToast({ visible: true, message, type });
+    setTimeout(() => {
+      setToast(prev => ({ ...prev, visible: false }));
+    }, 4000);
+  };
+
+  const handleCaptchaSubmit = (e) => {
+    e.preventDefault();
+
+    if (captchaInput.trim().toUpperCase() !== captchaCode) {
+      showToastMsg("Code CAPTCHA incorrect. Veuillez réessayer.", "error");
+      handleRefreshCaptcha();
+      return;
+    }
+
+    // Succès !
+    setIsCaptchaModalOpen(false);
+    setCaptchaInput('');
+    // Déclenche l'ouverture du client mail
+    window.location.href = "mailto:tchatelier13@gmail.com";
+  };
+
+
+  // --- DONNÉES DU PORTFOLIO ---
   const navigation = [
     { name: 'À Propos', href: '#about' },
     { name: 'Compétences', href: '#skills' },
@@ -231,8 +341,15 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-500/30 scroll-smooth">
+      
+      {/* Composant Toast (Notifications) */}
+      <div className={`fixed bottom-5 left-1/2 transform -translate-x-1/2 px-8 py-4 rounded-2xl shadow-2xl font-bold text-white transition-all duration-500 z-50 flex items-center gap-3 ${toast.visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'} ${toast.type === 'success' ? 'bg-emerald-600' : 'bg-red-600'}`}>
+        {toast.type === 'success' ? <CheckCircle2 className="w-6 h-6" /> : <X className="w-6 h-6" />}
+        {toast.message}
+      </div>
+
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 py-2 shadow-sm' : 'bg-transparent py-4'}`}>
+      <nav className={`fixed w-full z-40 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 py-2 shadow-sm' : 'bg-transparent py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0 flex items-center gap-3">
@@ -324,9 +441,9 @@ const App = () => {
             <Eye className="w-5 h-5 group-hover:scale-110 transition-transform" /> 
             Voir mon CV
             </a>
-            <a href="#contact" className="px-10 py-5 bg-white hover:bg-slate-50 text-slate-900 font-black rounded-2xl transition-all flex items-center gap-3 border border-slate-200 shadow-sm uppercase text-xs tracking-widest">
+            <button onClick={() => setIsCaptchaModalOpen(true)} className="px-10 py-5 bg-white hover:bg-slate-50 text-slate-900 font-black rounded-2xl transition-all flex items-center gap-3 border border-slate-200 shadow-sm uppercase text-xs tracking-widest cursor-pointer">
               Me contacter <ChevronRight className="w-5 h-5 text-blue-600" />
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -432,7 +549,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* Certifications Section (Moved before Réalisations) */}
+      {/* Certifications Section */}
       <section id="certifications" className="py-32 px-4 bg-white relative overflow-hidden">
         <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-[100px]"></div>
         <div className="max-w-7xl mx-auto relative z-10">
@@ -450,7 +567,6 @@ const App = () => {
                 <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">{doc.title}</h3>
                 <p className="text-slate-600 mb-10 text-base leading-relaxed font-medium flex-grow">{doc.desc}</p>
                 
-                {/* NOUVEAU BLOC BOUTONS DOUBLE ACTION */}
                 <div className="flex items-center gap-5 w-full pt-6 border-t border-slate-100">
                   <a 
                     href={doc.link}
@@ -476,7 +592,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* Realisations Section (Moved after Certifications) */}
+      {/* Realisations Section */}
       <section id="projects" className="py-32 px-4 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
@@ -524,7 +640,6 @@ const App = () => {
                   ))}
                 </div>
 
-                {/* ESPACE ANNEXES (Conditionnel) */}
                 {proj.annexes && proj.annexes.length > 0 && (
                   <div className="mb-10 p-4 bg-slate-50 rounded-2xl border border-slate-200">
                     <div className="flex items-center gap-2 mb-3 text-[10px] font-black uppercase tracking-widest text-blue-700">
@@ -547,7 +662,6 @@ const App = () => {
                   </div>
                 )}
 
-                {/* BLOC BOUTONS : VOIR ET TÉLÉCHARGER */}
                 <div className="flex gap-3">
                   <a 
                     href={proj.docLink}
@@ -640,7 +754,6 @@ const App = () => {
                       <span className="text-[10px] font-black uppercase tracking-widest text-blue-700">{item.tag}</span>
                     </div>
                     
-                    {/* Le titre est cliquable si un lien est fourni dans les données */}
                     {item.link ? (
                       <a 
                         href={item.link} 
@@ -668,7 +781,7 @@ const App = () => {
       </section>
 
       {/* Footer / Contact */}
-      <footer id="contact" className="py-32 bg-white border-t border-slate-200 px-4">
+      <footer id="contact" className="py-32 bg-slate-50 border-t border-slate-200 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-20 text-left">
           <div className="space-y-10">
             <div className="flex items-center gap-4">
@@ -679,8 +792,8 @@ const App = () => {
               Technicien Informatique.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="p-4 bg-slate-50 rounded-2xl text-slate-600 hover:text-blue-600 hover:bg-blue-50 border border-slate-200 transition-all hover:-translate-y-2 shadow-sm"><Linkedin className="w-7 h-7" /></a>
-              <a href="mailto:tchatelier13@gmail.com" className="p-4 bg-slate-50 rounded-2xl text-slate-600 hover:text-blue-600 hover:bg-blue-50 border border-slate-200 transition-all hover:-translate-y-2 shadow-sm"><Mail className="w-7 h-7" /></a>
+              <a href="#" className="p-4 bg-white rounded-2xl text-slate-600 hover:text-blue-600 hover:bg-blue-50 border border-slate-200 transition-all hover:-translate-y-2 shadow-sm"><Linkedin className="w-7 h-7" /></a>
+              <button onClick={() => setIsCaptchaModalOpen(true)} className="p-4 bg-white rounded-2xl text-slate-600 hover:text-blue-600 hover:bg-blue-50 border border-slate-200 transition-all hover:-translate-y-2 shadow-sm cursor-pointer" title="M'envoyer un email"><Mail className="w-7 h-7" /></button>
             </div>
           </div>
           
@@ -698,16 +811,16 @@ const App = () => {
 
           <div className="space-y-10">
             <h3 className="text-slate-900 font-black uppercase tracking-[0.25em] text-xs">Informations</h3>
-            <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-200 space-y-8 shadow-sm relative overflow-hidden group">
+            <div className="bg-white p-10 rounded-[2.5rem] border border-slate-200 space-y-8 shadow-sm relative overflow-hidden group">
               <div className="flex items-center gap-6 text-slate-600 font-medium">
-                <div className="p-4 bg-white rounded-2xl border border-slate-200 shrink-0"><Mail className="w-6 h-6 text-blue-600" /></div>
+                <button onClick={() => setIsCaptchaModalOpen(true)} className="p-4 bg-slate-50 hover:bg-blue-50 hover:border-blue-200 rounded-2xl border border-slate-200 shrink-0 transition-colors cursor-pointer" title="M'envoyer un email"><Mail className="w-6 h-6 text-blue-600" /></button>
                 <div className="flex flex-col min-w-0">
                   <span className="text-[10px] uppercase font-black tracking-widest text-slate-500">Email</span>
-                  <span className="text-slate-900 font-bold text-sm truncate">tchatelier13@gmail.com</span>
+                  <span className="text-slate-900 font-bold text-sm truncate">Protégé par CAPTCHA</span>
                 </div>
               </div>
               <div className="flex items-center gap-6 text-slate-600 font-medium">
-                <div className="p-4 bg-white rounded-2xl border border-slate-200 shrink-0"><Globe className="w-6 h-6 text-emerald-600" /></div>
+                <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 shrink-0"><Globe className="w-6 h-6 text-emerald-600" /></div>
                 <div className="flex flex-col">
                   <span className="text-[10px] uppercase font-black tracking-widest text-slate-500">Localisation</span>
                   <span className="text-slate-900 font-bold text-sm">Tarascon, France</span>
@@ -716,10 +829,72 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-32 pt-12 border-t border-slate-200 text-center text-slate-500 text-[10px] font-black uppercase tracking-[0.5em]">
+        <div className="max-w-7xl mx-auto mt-24 pt-12 border-t border-slate-200 text-center text-slate-500 text-[10px] font-black uppercase tracking-[0.5em]">
           © {new Date().getFullYear()} Théo Chatelier • Portfolio BTS SIO SISR
         </div>
       </footer>
+
+      {/* Modal CAPTCHA */}
+      {isCaptchaModalOpen && (
+        <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setIsCaptchaModalOpen(false)}>
+          <div className="bg-white rounded-[2rem] p-8 max-w-md w-full shadow-2xl relative border border-slate-200" onClick={e => e.stopPropagation()}>
+            <button 
+              onClick={() => setIsCaptchaModalOpen(false)}
+              className="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-3 bg-blue-50 rounded-xl">
+                <ShieldCheck className="w-6 h-6 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-black text-slate-900">Vérification</h3>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Anti-robot</p>
+              </div>
+            </div>
+
+            <p className="text-slate-600 text-sm font-medium mb-6">
+              Veuillez recopier le code ci-dessous pour m'envoyer un email.
+            </p>
+
+            <form onSubmit={handleCaptchaSubmit} className="space-y-6">
+              <div className="flex flex-col items-center gap-4 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                <div className="relative bg-white border-2 border-slate-200 rounded-xl overflow-hidden w-full flex justify-center py-2 shadow-inner">
+                  <canvas ref={canvasRef} width="160" height="60" className="cursor-crosshair"></canvas>
+                </div>
+                <button 
+                  type="button" 
+                  onClick={handleRefreshCaptcha}
+                  className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-widest"
+                >
+                  <RefreshCw className="w-4 h-4" /> Changer l'image
+                </button>
+              </div>
+
+              <div>
+                <input 
+                  type="text" 
+                  required
+                  value={captchaInput}
+                  onChange={(e) => setCaptchaInput(e.target.value.toUpperCase())}
+                  className="w-full px-6 py-4 bg-white border-2 border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all text-center font-mono tracking-[0.3em] uppercase text-xl font-bold text-slate-800"
+                  placeholder="CODE"
+                  maxLength={5}
+                />
+              </div>
+
+              <button 
+                type="submit" 
+                className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-black uppercase tracking-[0.2em] transition-all flex justify-center items-center gap-2 shadow-lg shadow-blue-600/30 hover:-translate-y-0.5"
+              >
+                <Mail className="w-5 h-5" /> M'écrire
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
