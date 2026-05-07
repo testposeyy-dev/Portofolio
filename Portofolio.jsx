@@ -711,7 +711,7 @@ const App = () => {
               </h3>
               <div className="grid gap-6">
                 {[
-                  { title: "Google Alerts", desc: "Monitoring quotidien des mots-clés : Cyber attaque, Microsoft, IA, Active Directory.", icon: <Bell className="w-8 h-8"/>, color: "blue" },
+                  { title: "Google Alerts", desc: "Monitoring quotidien des mots-clés : Cyber attaque, Microsoft, IA.", icon: <Bell className="w-8 h-8"/>, color: "blue" },
                   { title: "ANSSI / CERT-FR", desc: "Abonnement aux alertes de vulnérabilité et guides de bonnes pratiques.", icon: <ShieldCheck className="w-8 h-8"/>, color: "red" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-6 p-8 bg-white rounded-[2rem] border border-slate-200 hover:border-blue-300 transition-all shadow-sm hover:shadow-md group text-left">
@@ -735,7 +735,7 @@ const App = () => {
                 {[
                   { 
                     tag: "Sécurité Réseau", 
-                    date: "24 Avril 2025",
+                    date: "25 Septembre 2025",
                     title: "Multiples vulnérabilités critiques dans Cisco ASA et FTD", 
                     desc: "De multiples vulnérabilités (dont les CVE-2025-20362 et CVE-2025-20333) touchent les serveurs VPN des équipements Cisco. L'éditeur confirme que ces failles sont activement exploitées par des attaquants et permettent de prendre le contrôle total du système à distance.", 
                     color: "emerald",
