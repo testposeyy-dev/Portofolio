@@ -38,7 +38,7 @@ const App = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [scrolled, setScrolled] = useState(false);
 
-  // --- NOUVEAUX ÉTATS POUR LE CAPTCHA MODAL ---
+  // --- ÉTATS POUR LE CAPTCHA MODAL ---
   const canvasRef = useRef(null);
   const [captchaCode, setCaptchaCode] = useState('');
   const [captchaInput, setCaptchaInput] = useState('');
@@ -735,6 +735,7 @@ const App = () => {
                 {[
                   { 
                     tag: "Sécurité Réseau", 
+                    date: "24 Avril 2025",
                     title: "Multiples vulnérabilités critiques dans Cisco ASA et FTD", 
                     desc: "De multiples vulnérabilités (dont les CVE-2025-20362 et CVE-2025-20333) touchent les serveurs VPN des équipements Cisco. L'éditeur confirme que ces failles sont activement exploitées par des attaquants et permettent de prendre le contrôle total du système à distance.", 
                     color: "emerald",
@@ -742,6 +743,7 @@ const App = () => {
                   },
                   {
                     tag: "Sécurité Système",
+                    date: "4 Mai 2026",
                     title: "Windows : Alertes Secure Boot plus sévères",
                     desc: "Microsoft renforce la protection de la phase de démarrage de Windows 11. De nouvelles alertes plus strictes sont en préparation pour avertir les utilisateurs en cas de désactivation ou de compromission du Secure Boot, une protection essentielle contre les rootkits.",
                     color: "blue",
@@ -749,9 +751,16 @@ const App = () => {
                   },
                 ].map((item, i) => (
                   <div key={i} className="group p-8 bg-slate-50 rounded-[2rem] border border-slate-200 hover:bg-white hover:shadow-md transition-all text-left">
-                    <div className={`flex items-center gap-4 mb-4`}>
-                      <div className={`w-10 h-[2px] bg-blue-600`}></div>
-                      <span className="text-[10px] font-black uppercase tracking-widest text-blue-700">{item.tag}</span>
+                    <div className={`flex items-center justify-between mb-4`}>
+                      <div className="flex items-center gap-4">
+                        <div className={`w-10 h-[2px] bg-blue-600`}></div>
+                        <span className="text-[10px] font-black uppercase tracking-widest text-blue-700">{item.tag}</span>
+                      </div>
+                      {item.date && (
+                        <span className="text-[10px] font-bold text-slate-400 flex items-center gap-1.5 uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-slate-200">
+                          <Calendar className="w-3 h-3" /> {item.date}
+                        </span>
+                      )}
                     </div>
                     
                     {item.link ? (
