@@ -421,7 +421,7 @@ const App = () => {
           </h1>
           
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 mb-12 leading-relaxed font-medium">
-            Étudiant en <span className="text-slate-900 font-bold">BTS SIO option SISR</span>, j'évolue actuellement en alternance en tant que Technicien Informatique chez Solarys "Groupement les Mousquetaires". Passionné par l'infrastructure réseau, la virtualisation et la cybersécurité opérationnelle.
+            Étudiant en <span className="text-slate-900 font-bold">BTS SIO option SISR</span> à la CCI du Vaucluse, j'évolue actuellement en alternance en tant que Technicien Informatique à la société Solarys "Groupement les Mousquetaires". Passionné par l'infrastructure réseau, la virtualisation et la cybersécurité opérationnelle.
           </p>
           
           <div className="flex flex-wrap justify-center gap-5">
@@ -457,7 +457,7 @@ const App = () => {
             </h2>
             <div className="space-y-6">
               <p className="text-slate-600 text-xl leading-relaxed">
-                Diplômé d'un <span className="text-slate-900 underline decoration-blue-500 underline-offset-8">Bac Pro RISC (Mention Bien)</span> en 2024, je forge mon expertise technique à travers un BTS SIO au CCI Vaucluse.
+                Diplômé d'un <span className="text-slate-900 underline decoration-blue-500 underline-offset-8">Bac Pro SN Option RISC (Mention Bien)</span> en 2024, je forge mon expertise technique à travers un BTS SIO au CCI Vaucluse.
               </p>
               <p className="text-slate-600 text-lg leading-relaxed">
                 Curieux et rigoureux, j'ai eu l'opportunité de travailler sur des projets d'envergure comme le projet <span className="text-slate-900 font-bold italic">Convergence</span> chez Agro Mousquetaires, alliant audit WiFi, déploiement MDM et téléphonie IP.
