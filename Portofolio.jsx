@@ -421,7 +421,7 @@ const App = () => {
           </h1>
           
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 mb-12 leading-relaxed font-medium">
-            Étudiant en <span className="text-slate-900 font-bold">BTS SIO option SISR</span> à la CCI du Vaucluse, j'évolue actuellement en alternance en tant que Technicien Informatique à la société Solarys "Groupement les Mousquetaires". Passionné par l'infrastructure réseau, la virtualisation et la cybersécurité opérationnelle.
+            Étudiant en <span className="text-slate-900 font-bold">BTS SIO option SISR</span> à la CCI du Vaucluse, j'évolue actuellement en alternance en tant que Technicien Informatique à la société Solarys, une entité du Groupement Les Mousquetaires . Passionné par l'infrastructure réseau, la virtualisation et la cybersécurité opérationnelle.
           </p>
           
           <div className="flex flex-wrap justify-center gap-5">
