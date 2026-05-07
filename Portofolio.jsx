@@ -742,6 +742,14 @@ const App = () => {
                     link: "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2025-ALE-013/"
                   },
                   {
+                    tag: "Vulnérabilité MDM",
+                    date: "30 Janvier 2026",
+                    title: "Vulnérabilités critiques dans Ivanti Endpoint Manager Mobile",
+                    desc: "Le CERT-FR alerte sur des vulnérabilités critiques (CVE-2026-1281 et CVE-2026-1340) affectant la solution MDM Ivanti EPMM. Ces failles, activement exploitées, permettent une exécution de code à distance (RCE) sans authentification.",
+                    color: "red",
+                    link: "https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-001/"
+                  },
+                  {
                     tag: "Sécurité Système",
                     date: "4 Mai 2026",
                     title: "Windows : Alertes Secure Boot plus sévères",
