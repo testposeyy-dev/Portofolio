@@ -737,7 +737,7 @@ const App = () => {
                     tag: "IA & Cybersécurité",
                     date: "28 avril 2025",
                     title: "IA et cybersécurité en 2025 : entre sophistication des menaces et défense proactive",
-                    desc: " L'IA s'impose en 2025 comme un levier clé en cybersécurité. Si elle renforce les capacités défensives des entreprises (détection prédictive, réponse automatisée), elle alimente aussi de nouvelles cybermenaces — deepfakes, attaques automatisées",
+                    desc: " L'IA s'impose en 2025 comme un levier clé en cybersécurité. Si elle renforce les capacités défensives des entreprises (détection prédictive, réponse automatisée), elle alimente aussi de nouvelles cybermenaces — deepfakes, attaques automatisées.",
                     color: "green",
                     link: "https://www.stor-solutions.fr/ia-et-cybersecurite-en-2025/"
                   },
