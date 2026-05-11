@@ -733,6 +733,14 @@ const App = () => {
               </h3>
               <div className="space-y-8">
                 {[
+                  {
+                    tag: "IA & Cybersécurité",
+                    date: "28 avril 2025",
+                    title: "IA et cybersécurité en 2025 : entre sophistication des menaces et défense proactive",
+                    desc: " L'IA s'impose en 2025 comme un levier clé en cybersécurité. Si elle renforce les capacités défensives des entreprises (détection prédictive, réponse automatisée), elle alimente aussi de nouvelles cybermenaces — deepfakes, attaques automatisées",
+                    color: "green",
+                    link: "https://www.stor-solutions.fr/ia-et-cybersecurite-en-2025/"
+                  },
                   { 
                     tag: "Sécurité Réseau", 
                     date: "25 Septembre 2025",
@@ -757,15 +765,7 @@ const App = () => {
                     color: "blue",
                     link: "https://www.ginjfo.com/actualites/logiciels/windows-11/windows-microsoft-prepare-des-alertes-secure-boot-plus-severes-20260504"
                   },
-                  {
-                    tag: "Vulnérabilité Linux",
-                    date: "5 Mai 2026",
-                    title: "Anatomie d'une vulnérabilité : Copy-Fail",
-                    desc: "Analyse approfondie de la faille Copy-Fail. Présente dans les noyaux Linux depuis 2017, cette vulnérabilité critique permet à un attaquant local d'obtenir un accès Root total en exploitant une faille complexe de gestion mémoire.",
-                    color: "red",
-                    link: "https://itsocial.fr/cybersecurite/cybersecurite-actualites/anatomie-dune-vulnerabilite-copy-fail-donne-les-droits-root-sur-tout-noyau-linux-depuis-2017/"
-                  },
-                ].map((item, i) => (
+                  ].map((item, i) => (
                   <div key={i} className="group p-8 bg-slate-50 rounded-[2rem] border border-slate-200 hover:bg-white hover:shadow-md transition-all text-left">
                     <div className={`flex items-center justify-between mb-4`}>
                       <div className="flex items-center gap-4">
